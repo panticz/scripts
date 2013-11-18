@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Version 2010-07-27
-
 # todo
 # configure locales
 # configure hostname
@@ -69,16 +67,6 @@ function state() {
 		echo "OK";
 	fi
 }
-
-#function script2() {
-#    if [ ! -z ${1} ]; then 
-#        URL=http://www.panticz.de/sites/default/files/scripts/${1}
-#
-#        wget -nv ${URL} -O /tmp/${1}
-#        chmod +x /tmp/${1}
-#        /tmp/${1} ${2} 2>&1 | tee -a ${LOG}
-#    fi
-#}
 
 function script4() {
     if [ ! -z ${1} ]; then
@@ -801,12 +789,10 @@ function install_cpuburn() {
 }
 
 function install_cpuload() {
-#    script2 install.cpuload.sh
 	wget -q http://dl.panticz.de/sts/install.powermeter.cpuload.sh -O - | sudo bash 
 }
 
 function install_mprime() {
-#    script2 install.mprime.sh
 	wget -q http://dl.panticz.de/scripts/install.mprime.sh -O - | sudo bash
 }
 
