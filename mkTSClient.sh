@@ -646,8 +646,8 @@ deb http://archive.ubuntu.com/ubuntu ${DISTRIB_CODENAME}-security main universe 
 #deb http://archive.ubuntu.com/ubuntu ${DISTRIB_CODENAME}-backports main universe multiverse restricted
 EOF
 
-# fix missing packages in saucy
-if [ "${DISTRIB_CODENAME}" == "saucy" ]; then
+# fix missing packages in trusty
+if [ "${DISTRIB_CODENAME}" == "trusty" ]; then
     echo "deb http://archive.ubuntu.com/ubuntu raring main universe multiverse restricted" >> ${DIR}/chroot/etc/apt/sources.list
 fi
 }
