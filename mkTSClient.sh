@@ -793,6 +793,7 @@ function install_cpuload() {
 }
 
 function install_mprime() {
+	apt-get install -y libcurl3
 	wget -q http://dl.panticz.de/scripts/install.mprime.sh -O - | sudo bash
 }
 
