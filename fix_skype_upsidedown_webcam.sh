@@ -16,4 +16,4 @@ if [ ! -f /usr/lib/libv4l/v4l1compat.so ]; then
 fi
 
 # modify Skype launcher
-sudo sed -i 's|Exec=skype|Exec=env LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so skype|g' /usr/share/applications/skype.desktop
+sudo sed -i 's|env PULSE_LATENCY_MSEC=60 skype %U|Exec=env PULSE_LATENCY_MSEC=60 LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so skype %U|g' /usr/share/applications/skype.desktop
