@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install video4linux libraries 
-sudo apt-get install libv4l-0
+sudo apt-get install libv4l-0:i386
 
 # fix lib path
 if [ ! -f /usr/lib/libv4l/v4l1compat.so ]; then
@@ -16,4 +16,4 @@ if [ ! -f /usr/lib/libv4l/v4l1compat.so ]; then
 fi
 
 # modify Skype launcher
-sudo sed -i 's|env PULSE_LATENCY_MSEC=60 skype %U|env PULSE_LATENCY_MSEC=60 LD_PRELOAD=/usr/lib/libv4l/v4l1compat.so skype %U|g' /usr/share/applications/skype.desktop
+sudo sed -i 's|env PULSE_LATENCY_MSEC=60 skype %U|env PULSE_LATENCY_MSEC=60 LD_PRELOAD=/usr/lib/i386-linux-gnu/libv4l/v4l1compat.so skype %U|g' /usr/share/applications/skype.desktop
