@@ -90,6 +90,11 @@ cat <<EOF> /etc/apt/sources.list.d/${DISTRIB_CODENAME}.list
 deb http://de.archive.ubuntu.com/ubuntu/ ${DISTRIB_CODENAME} main
 EOF
 
+# fix repository to old-releases when raring
+if [ "${DISTRIB_CODENAME}" == "raring" ]; then
+    sed -i 's|de.archive|old-releases|g' /etc/apt/sources.list.d/${DISTRIB_CODENAME}.list
+fi
+
 #cat <<EOF>> /etc/apt/apt.conf
 #APT::Cache-Limit 67108864;
 #EOF
