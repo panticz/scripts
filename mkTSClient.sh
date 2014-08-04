@@ -647,8 +647,8 @@ deb http://archive.ubuntu.com/ubuntu ${DISTRIB_CODENAME}-security main universe 
 EOF
 
 # fix repository to old-releases when raring
-if [ "${DISTRIB_CODENAME}" == "raring" ] then
-	sed -i 's|de.archive|old-releases|g' ${DIR}/chroot/etc/apt/sources.list
+if [ "${DISTRIB_CODENAME}" == "raring" ]; then
+    sed -i 's|de.archive|old-releases|g' ${DIR}/chroot/etc/apt/sources.list
 fi
 
 # fix missing packages in trusty
