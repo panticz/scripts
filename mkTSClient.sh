@@ -712,7 +712,8 @@ function install_default_apps() {
             apt-get update -qq
         fi
 
-		apt-get install -y linux-server
+#		apt-get install -y linux-server
+	apt-get install -y linux-generic
         apt-get install -y amd64-microcode intel-microcode
 
 ###	    if [ "${IMAGE}" == "pm" ]; then
