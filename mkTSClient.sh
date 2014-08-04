@@ -874,6 +874,8 @@ function install_extra_apps() {
 			#mk_run_console
 			mk_run_init
 			mk_ts
+			#apt-get install -y linux-firmware
+			#apt-get install -y linux-firmware-nonfree
 
 			#mk_small
 #            apt-get remove -y "linux-headers*"
