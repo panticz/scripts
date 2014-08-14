@@ -483,6 +483,7 @@ EOF
 function mk_ts() {
 	apt-get install -y wget
 	apt-get install -y hwinfo
+	apt-get install -y inxi
 	apt-get install -y bonnie++
 	apt-get install -y stress
 	apt-get install -y x86info
