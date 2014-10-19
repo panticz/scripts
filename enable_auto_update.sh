@@ -1,5 +1,7 @@
 #!/bin/bash
 
+apt-get install -y unattended-upgrades
+
 . /etc/os-release
 
 # enable update on debian
