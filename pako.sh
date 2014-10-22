@@ -3,9 +3,12 @@
 # set font size
 gsettings set org.gnome.desktop.interface font-name 'Ubuntu 10'
 
-# configure clock
+# configure panel clock
 gsettings set com.canonical.indicator.datetime show-date true
 gsettings set com.canonical.indicator.datetime show-day true
+
+# configure panel sound
+gsettings set com.canonical.indicator.sound visible true
 
 # configure workspaces
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 2
