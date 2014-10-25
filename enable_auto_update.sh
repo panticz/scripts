@@ -15,7 +15,11 @@ if [ "${ID}" == "ubuntu" ]; then
   sed -i '4s|//| |g' /etc/apt/apt.conf.d/50unattended-upgrades
 fi
 
-#sed -i 's|//Unattended-Upgrade::Mail|Unattended-Upgrade::Mail|g' /etc/apt/apt.conf.d/50unattended-upgrades
+# reconfigure
+sed -i 's|APT::Periodic::Unattended-Upgrade "0";|APT::Periodic::Unattended-Upgrade "1";|g' /etc/apt/apt.conf.d/10periodic
+sed -i 's|APT::Periodic::Update-Package-Lists "0";|APT::Periodic::Update-Package-Lists "1";|g' /etc/apt/apt.conf.d/10periodic
 sed -i 's|APT::Periodic::Download-Upgradeable-Packages "0";|APT::Periodic::Download-Upgradeable-Packages "1";|g' /etc/apt/apt.conf.d/10periodic
-sed -i 's|APT::Periodic::AutocleanInterval "0";|APT::Periodic::AutocleanInterval "7";|g' /etc/apt/apt.conf.d/10periodic
-echo 'APT::Periodic::Unattended-Upgrade "1";' >> /etc/apt/apt.conf.d/10periodic
+sed -i 's|APT::Periodic::AutocleanInterval "0";|APT::Periodic::AutocleanInterval "1";|g' /etc/apt/apt.conf.d/10periodic
+
+sed -i 's|//Unattended-Upgrade::Mail|Unattended-Upgrade::Mail|g' /etc/apt/apt.conf.d/50unattended-upgrades
+sed -i 's|//Unattended-Upgrade::MinimalSteps "true";|Unattended-Upgrade::MinimalSteps "true";|g' /etc/apt/apt.conf.d/50unattended-upgrades
