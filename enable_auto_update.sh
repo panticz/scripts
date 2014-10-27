@@ -16,10 +16,29 @@ if [ "${ID}" == "ubuntu" ]; then
 fi
 
 # reconfigure
-sed -i 's|APT::Periodic::Unattended-Upgrade "0";|APT::Periodic::Unattended-Upgrade "1";|g' /etc/apt/apt.conf.d/10periodic
-sed -i 's|APT::Periodic::Update-Package-Lists "0";|APT::Periodic::Update-Package-Lists "1";|g' /etc/apt/apt.conf.d/10periodic
-sed -i 's|APT::Periodic::Download-Upgradeable-Packages "0";|APT::Periodic::Download-Upgradeable-Packages "1";|g' /etc/apt/apt.conf.d/10periodic
-sed -i 's|APT::Periodic::AutocleanInterval "0";|APT::Periodic::AutocleanInterval "1";|g' /etc/apt/apt.conf.d/10periodic
+if [ $(grep "APT::Periodic::Unattended-Upgrade" /etc/apt/apt.conf.d/10periodic 2> /dev/null | wc -l) -gt 0 ]; then
+  sed -i 's|APT::Periodic::Unattended-Upgrade "0";|APT::Periodic::Unattended-Upgrade "1";|g' /etc/apt/apt.conf.d/10periodic
+else
+  echo 'APT::Periodic::Unattended-Upgrade "1";' >> /etc/apt/apt.conf.d/10periodic
+fi
+
+if [ $(grep "APT::Periodic::Update-Package-Lists" /etc/apt/apt.conf.d/10periodic 2> /dev/null | wc -l) -gt 0 ]; then
+  sed -i 's|APT::Periodic::Update-Package-Lists "0";|APT::Periodic::Update-Package-Lists "1";|g' /etc/apt/apt.conf.d/10periodic
+else
+  echo 'APT::Periodic::Update-Package-Lists "1";' >> /etc/apt/apt.conf.d/10periodic
+fi
+
+if [ $(grep "APT::Periodic::Download-Upgradeable-Packages" /etc/apt/apt.conf.d/10periodic 2> /dev/null | wc -l) -gt 0 ]; then
+  sed -i 's|APT::Periodic::Download-Upgradeable-Packages "0";|APT::Periodic::Download-Upgradeable-Packages "1";|g' /etc/apt/apt.conf.d/10periodic
+else
+  echo 'APT::Periodic::Download-Upgradeable-Packages "1";' >> /etc/apt/apt.conf.d/10periodic
+fi
+
+if [ $(grep "APT::Periodic::AutocleanInterval" /etc/apt/apt.conf.d/10periodic 2> /dev/null | wc -l) -gt 0 ]; then
+  sed -i 's|APT::Periodic::AutocleanInterval "0";|APT::Periodic::AutocleanInterval "1";|g' /etc/apt/apt.conf.d/10periodic
+else
+  echo 'APT::Periodic::AutocleanInterval "1";' >> /etc/apt/apt.conf.d/10periodic
+fi
 
 # enable email notification when mailx is installed
 $(dpkg-query -l mailx > /dev/null 2>&1)
