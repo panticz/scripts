@@ -23,3 +23,9 @@ gsettings set org.gnome.gedit.preferences.editor tabs-size 4
 gsettings set org.gnome.gedit.preferences.editor insert-spaces true
 gsettings set org.gnome.gedit.preferences.editor bracket-matching true
 gsettings set org.gnome.gedit.preferences.editor create-backup-copy false
+
+# autostart
+[ ! -d ~/.config/autostart ] && mkdir ~/.config/autostart && chmod 700 ~/.config/autostart
+ln -s /usr/share/applications/firefox.desktop ~/.config/autostart/
+ln -s /usr/share/applications/thunderbird.desktop ~/.config/autostart/
+ln -s /usr/share/applications/skype.desktop ~/.config/autostart/
