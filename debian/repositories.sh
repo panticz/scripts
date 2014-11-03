@@ -4,6 +4,12 @@ deb http://cdn.debian.net/debian squeeze main
 deb-src http://cdn.debian.net/debian squeeze main
 EOF
 
+# Debian Squeeze LTS
+cat <<EOF> /etc/apt/sources.list.d/squeeze-lts.list
+deb http://http.debian.net/debian/ squeeze-lts main contrib non-free
+deb-src http://http.debian.net/debian/ squeeze-lts main contrib non-free
+EOF
+
 # Debian Squeeze backports
 cat <<EOF> /etc/apt/sources.list.d/squeeze-backports.list
 deb http://ftp.de.debian.org/debian-backports squeeze-backports main
