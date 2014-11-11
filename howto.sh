@@ -371,4 +371,5 @@ ls /foo | wc; echo ${PIPESTATUS[@]}
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.
 
 # ionice
-ionice -c 3 -p 1184
+ionice -c 3 -p 1184	# set priority for process
+ionice -p 1170		# view priority of a process
