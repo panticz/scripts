@@ -369,3 +369,6 @@ ls /foo | wc; echo ${PIPESTATUS[@]}
 
 # add current directory to libraries path
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.
+
+# ionice
+ionice -c 3 -p 1184
