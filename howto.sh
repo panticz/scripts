@@ -373,3 +373,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.
 # ionice
 ionice -c 3 -p 1184	# set priority for process
 ionice -p 1170		# view priority of a process
+
+# find file bigger then 50 MB
+find /home -type f -size +50M -exec ls -lh {} \;
