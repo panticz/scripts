@@ -376,3 +376,6 @@ ionice -p 1170		# view priority of a process
 
 # find file bigger then 50 MB
 find /home -type f -size +50M -exec ls -lh {} \;
+
+# view my public ip
+curl checkip.dyndns.com
