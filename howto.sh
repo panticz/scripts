@@ -379,3 +379,6 @@ find /home -type f -size +50M -exec ls -lh {} \;
 
 # view my public ip
 curl checkip.dyndns.com
+
+# file write protect
+chattr +i /etc/shadow
