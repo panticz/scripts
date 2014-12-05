@@ -9,6 +9,7 @@ gsettings set com.canonical.indicator.datetime show-day true
 
 # configure panel sound
 gsettings set com.canonical.indicator.sound visible true
+gsettings set org.gnome.desktop.sound event-sounds false
 
 # configure workspaces
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 2
