@@ -14,6 +14,9 @@ gsettings set org.gnome.desktop.sound event-sounds false
 # configure workspaces
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 2
 
+# configure session
+gsettings set org.gnome.desktop.session idle-delay 600
+
 # configure nautilus
 gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
 gsettings set org.gnome.nautilus.list-view default-zoom-level 'smallest'
