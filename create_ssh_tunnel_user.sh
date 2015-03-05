@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # crate new user
-useradd tunnel --create-home --skel /dev/null --shell /bin/rbash --password $(openssl rand -base64 32)
+useradd tunnel --create-home --skel /dev/null --shell /bin/rbash
+
+# set random encrypted password to enable login
+echo "tunnel:$(openssl rand -base64 32)" | chpasswd
 
 # create authorized_keys
 mkdir /home/tunnel/.ssh
