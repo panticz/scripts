@@ -388,3 +388,6 @@ grep ^[^#] <FILE>
 
 # find broken softlinks
 find /home/ -type l -! -exec test -e {} \; -print
+
+# set user random password (to enable login)
+echo "username:$(openssl rand -base64 32)" | chpasswd
