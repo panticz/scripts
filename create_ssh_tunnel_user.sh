@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# crate new user
+# create new restricted user
 useradd tunnel --gid nogroup --create-home --skel /dev/null --shell /bin/rbash
 
 # set random encrypted password to enable login
