@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # crate new user
-useradd tunnel -m -s /bin/rbash -p $(openssl rand -base64 32)
+useradd tunnel --create-home --shell /bin/rbash --password $(openssl rand -base64 32)
 
 # remove all user files
 find /home/tunnel -name ".*" -delete
