@@ -87,8 +87,11 @@ partprobe
 # list blocking prozesses
 lsof /mnt
 
-# Add a existing user to existing group
+# add a existing user to existing group
 usermod -a -G GROUPNAME USERNAME
+
+# allow user to administrate system (add to adm group)
+usermod -a -G adm ${USER}
 
 # Delete user from group
 edit /etc/group and remove user name
@@ -193,9 +196,6 @@ dpkg –remove –force-depends –force-remove-reinstreq PACKAGE_NAME
 
 # configure timezone
 dpkg-reconfigure tzdata
-
-# allow user to administrate system (add to adm group)
-usermod -a -G adm $USER
 
 # change password non interactive
 echo "root:terceS" | chpasswd
