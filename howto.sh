@@ -100,6 +100,9 @@ id -nG USERNAME
 usermod -G group1, group2, group3,... USERNAME
 # test gpasswd
 
+# delete user password
+passwd -d <USERNAME>
+
 # Mount SSH
 sshfs user@192.168.1.2:/media/images /mnt
 
