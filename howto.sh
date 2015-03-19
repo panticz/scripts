@@ -397,3 +397,6 @@ echo "username:$(openssl rand -base64 32)" | chpasswd
 
 # list deb package dependency
 dpkg -I <PACKAGE.deb>
+
+# send POST data from command line
+curl --data "user=boo&action=insert" <URL>
