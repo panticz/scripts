@@ -1,17 +1,5 @@
-# String replace with sed
-sed -i 's|STRING_FROM|STRING_TO|g' FILE
-sed  -i 's|[#]*param=[yes|no]*|param=yes|g' FILE
-
-# add line to a file
-sed -i '13i\YOUR_TEXT' FILE
-
 # remove multiple blanks
 cat in.txt | sed "s/[ ][ ]*/ /g" > out.txt
-
-# String regexp
-if [[ "${MOTHERBOARD}" =~ H8DM(8|E)-2 ]] &&  [[ "${RAID}" =~ 9650SE-(4|8)LPML ]]; then
-   echo "found"
-fi
 
 # Comparing content of two files
 comm -12 <(sort FILE1.txt) <(sort FILE2.txt)
