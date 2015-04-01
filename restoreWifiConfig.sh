@@ -7,7 +7,5 @@ else
 fi
 
 sudo mount /dev/${DEV} /mnt
-for i in $(sudo grep -l wireless /mnt/etc/NetworkManager/system-connections/*); do
-  sudo cp $i /etc/NetworkManager/system-connections/
-done
+sudo cp /mnt/etc/NetworkManager/system-connections/* /etc/NetworkManager/system-connections/
 sudo umount /mnt
