@@ -377,6 +377,9 @@ chattr +i /etc/shadow
 # view config file without comments
 grep ^[^#] <FILE>
 
+# find softlinks
+find . -type l -exec ls -ld {} \;
+
 # find broken softlinks
 find /home/ -type l -! -exec test -e {} \; -print
 
