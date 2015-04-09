@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# check for modified files
+for FILE in $(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD); do
+  case "${FILE}" in
+    *.json)
+      # Repository configuration changed: update Satis
+      ~/my_repository/scripts/satis_update.sh
+      ;;
+    cronjobs/crontab)
+      # Crontab changed: update user cronjobs
+      ~/my_repository/scripts/crontab_update.sh
+      ;;
+  esac
+done
