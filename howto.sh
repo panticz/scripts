@@ -392,8 +392,8 @@ dpkg -I <PACKAGE.deb>
 # send POST data from command line
 curl --data "user=boo&action=insert" <URL>
 
-# check if port is open
-netstat -lpnt | grep 23456
+# list open ports
+netstat -lpnt
 
 # backup crontab
 crontab -l > crontab.bkp
