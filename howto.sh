@@ -403,3 +403,8 @@ crontab -r
 
 # restore crontab
 cat crontab.bkp | crontab -
+
+# backup files only smaller than 10 MB
+for DIR in .mozilla .ssh .thunderbird bin foo bar; do
+    tar cjf ~/backup/$(date -I).${DIR#.}.tar.bz2 ~/${DIR} --exclude "*~" --exclude-from <(find ~/${DIR} -size +10M)
+done
