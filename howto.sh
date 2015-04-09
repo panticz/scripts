@@ -394,3 +394,12 @@ curl --data "user=boo&action=insert" <URL>
 
 # check if port is open
 netstat -lpnt | grep 23456
+
+# backup crontab
+crontab -l > crontab.bkp
+
+# clear crontab
+crontab -r
+
+# restore crontab
+cat crontab.bkp | crontab -
