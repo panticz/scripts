@@ -5,7 +5,7 @@ for FILE in $(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD); do
   case "${FILE}" in
     *.json)
       # Repository configuration changed: update Satis
-      ~/my_repository/scripts/satis_update.sh
+      ~/my_repository/scripts/json_update.sh
       ;;
     cronjobs/crontab)
       # Crontab changed: update user cronjobs
