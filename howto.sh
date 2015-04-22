@@ -408,3 +408,6 @@ cat crontab.bkp | crontab -
 for DIR in .mozilla .ssh .thunderbird bin foo bar; do
     tar cjf ~/backup/$(date -I).${DIR#.}.tar.bz2 ~/${DIR} --exclude "*~" --exclude-from <(find ~/${DIR} -size +10M)
 done
+
+# get file last modification date
+stat file
