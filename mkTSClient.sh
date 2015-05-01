@@ -480,9 +480,27 @@ EOF
 	apt-get update -qq
 }
 
+function install_hwinfo() {
+    . /etc/os-release
+    if [ $(echo ${VERSION_ID} | tr -d ".") -gt 1204 ]; then
+        if [ $(uname -m) == "x86_64" ]; then
+            wget -nv http://mirrors.kernel.org/ubuntu/pool/universe/h/hwinfo/hwinfo_16.0-2.1_amd64.deb -P /tmp
+            wget -nv http://mirrors.kernel.org/ubuntu/pool/universe/h/hwinfo/libhd16_16.0-2.1_amd64.deb -P /tmp
+            wget -nv http://mirrors.kernel.org/ubuntu/pool/universe/h/hal/libhal1_0.5.14-8_amd64.deb -P /tmp
+        else
+            wget -nv http://mirrors.kernel.org/ubuntu/pool/universe/h/hwinfo/hwinfo_16.0-2.1_i386.deb -P /tmp
+            wget -nv http://mirrors.kernel.org/ubuntu/pool/universe/h/hwinfo/libhd16_16.0-2.1_i386.deb -P /tmp
+            wget -nv http://mirrors.kernel.org/ubuntu/pool/universe/h/hal/libhal1_0.5.14-8_i386.deb -P /tmp
+        fi
+        dpkg -i /tmp/hwinfo_*.deb /tmp/libhd16_*.deb /tmp/libhal1_*.deb
+    else
+        apt-get install -y hwinfo
+    fi
+}
+
 function mk_ts() {
 	apt-get install -y wget
-	apt-get install -y hwinfo
+	install_hwinfo
 	apt-get install -y inxi
 	apt-get install -y bonnie++
 	apt-get install -y stress
