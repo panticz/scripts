@@ -90,11 +90,6 @@ cat <<EOF> /etc/apt/sources.list.d/${DISTRIB_CODENAME}.list
 deb http://de.archive.ubuntu.com/ubuntu/ ${DISTRIB_CODENAME} main
 EOF
 
-# fix repository to old-releases when raring
-if [ "${DISTRIB_CODENAME}" == "raring" ]; then
-    sed -i 's|de.archive|old-releases|g' /etc/apt/sources.list.d/${DISTRIB_CODENAME}.list
-fi
-
 #cat <<EOF>> /etc/apt/apt.conf
 #APT::Cache-Limit 67108864;
 #EOF
@@ -655,12 +650,8 @@ function check_dirs() {
 function mk_bootstrap() {
 	echo -n "mk_bootstrap..."
 	
-	if [ "${DISTRIB_CODENAME}" == "raring" ]; then
-		# fix repository to old-releases when raring
-		URL="http://old-releases.ubuntu.com/ubuntu/"
-	else
-		URL="http://archive.ubuntu.com/ubuntu/"
-	fi
+	URL="http://archive.ubuntu.com/ubuntu/"
+
 	debootstrap --arch ${ARCH} ${DISTRIB_CODENAME} ${DIR}/chroot ${URL} 1>/dev/null
 	
 	state $?
@@ -676,16 +667,6 @@ deb http://archive.ubuntu.com/ubuntu ${DISTRIB_CODENAME}-security main universe 
 #deb http://archive.ubuntu.com/ubuntu ${DISTRIB_CODENAME}-proposed main universe multiverse restricted
 #deb http://archive.ubuntu.com/ubuntu ${DISTRIB_CODENAME}-backports main universe multiverse restricted
 EOF
-
-# fix repository to old-releases when raring
-if [ "${DISTRIB_CODENAME}" == "raring" ]; then
-    sed -i 's|de.archive|old-releases|g' ${DIR}/chroot/etc/apt/sources.list
-fi
-
-# fix missing packages in trusty
-if [ "${DISTRIB_CODENAME}" == "trusty" ]; then
-    echo "deb http://archive.ubuntu.com/ubuntu saucy main universe multiverse restricted" >> ${DIR}/chroot/etc/apt/sources.list
-fi
 }
  
 function create_bashrc() {
