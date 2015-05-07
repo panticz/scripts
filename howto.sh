@@ -414,3 +414,6 @@ done
 
 # get file last modification date
 stat file
+
+# extract specific file from tar archive
+tar -xvf archive.tar <path/to/file>
