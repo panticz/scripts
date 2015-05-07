@@ -377,6 +377,9 @@ chattr +i /etc/shadow
 # view config file without comments
 grep ^[^#] <FILE>
 
+# search multiple string with grep
+grep -w 'warning\|error\|critical' /var/log/messages
+
 # find softlinks
 find . -type l -exec ls -ld {} \;
 
