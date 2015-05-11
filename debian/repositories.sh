@@ -35,7 +35,7 @@ deb-src http://http.debian.net/debian/ jessie main contrib non-free
 EOF
 
 # Debian Jessie backports
-cat <<EOF> /etc/apt/sources.list.d/jessie.list
+cat <<EOF> /etc/apt/sources.list.d/jessie-backports.list
 deb ftp://ftp.de.debian.org/debian/ jessie-backports main contrib non-free
 deb-src ftp://ftp.de.debian.org/debian/ jessie-backports main contrib non-free
 EOF
