@@ -536,7 +536,15 @@ function mk_ts() {
 	apt-get install -y bc
 	apt-get install -y pciutils
 	apt-get install -y perl
-	apt-get install -y lshw
+	
+	if [ "${DISTRIB_CODENAME}" == "vivid" ]; then
+		# downgrade lshw to v02.16 because of broken memory recognition
+		wget http://mirrors.kernel.org/ubuntu/pool/main/l/lshw/lshw_02.16-2ubuntu2.1_amd64.deb -O /tmp/lshw_02.16-2ubuntu2.1_amd64.deb
+		dpkg -i /tmp/lshw_02.16-2ubuntu2.1_amd64.deb
+	else
+		apt-get install -y lshw
+	fi
+	
 	apt-get install -y sshfs
 	apt-get install -y rsync
     install_ssh
