@@ -601,7 +601,7 @@ function mk_ts() {
     sed -i 's|BLANK_TIME=30|BLANK_TIME=0|g' /etc/console-tools/config
     sed -i 's|POWERDOWN_TIME=30|POWERDOWN_TIME=0|g' /etc/console-tools/config
 
-    apt-get remove -y plymouth
+    # apt-get remove -y plymouth
 }
 
 function install_hddtemp() {
