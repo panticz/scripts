@@ -690,10 +690,15 @@ function check_dirs() {
 function mk_bootstrap() {
 	echo -n "mk_bootstrap..."
 	
-	URL="http://archive.ubuntu.com/ubuntu/"
-
-	debootstrap --arch ${ARCH} ${DISTRIB_CODENAME} ${DIR}/chroot ${URL} 1>/dev/null
+	if [ "${DISTRIB_CODENAME}" == "raring" ]; then
+		# fix repository to old-releases when raring
+		URL="http://old-releases.ubuntu.com/ubuntu/"
+	else
+		URL="http://archive.ubuntu.com/ubuntu/"
+	fi
 	
+	debootstrap --arch ${ARCH} ${DISTRIB_CODENAME} ${DIR}/chroot ${URL} 1>/dev/null
+
 	state $?
 }
  
