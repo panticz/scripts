@@ -116,6 +116,23 @@ end script
 EOF
 }
 
+function mk_run_systemd() {
+cat <<EOF> /etc/systemd/system/run.service
+[Unit]
+Description=cdrom run script
+After=network.target
+
+[Service]
+StandardOutput=tty
+ExecStart=/cdrom/run
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+/bin/systemctl enable run.service
+}
+
 function mk_run_console() {
 #cat <<EOF> /etc/init/cdromrun.conf
 #start on filesystem
@@ -890,7 +907,12 @@ function install_extra_apps() {
 		;;
 		ts)
 			#mk_run_console
-			mk_run_init
+			. /etc/os-release
+			if [ $(echo ${VERSION_ID} | tr -d ".") -ge 1504 ]; then
+				mk_run_systemd
+			else
+				mk_run_init
+			fi
 			mk_ts
 			#apt-get install -y linux-firmware
 			#apt-get install -y linux-firmware-nonfree
