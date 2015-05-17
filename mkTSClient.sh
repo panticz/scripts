@@ -712,6 +712,16 @@ deb http://archive.ubuntu.com/ubuntu ${DISTRIB_CODENAME}-security main universe 
 #deb http://archive.ubuntu.com/ubuntu ${DISTRIB_CODENAME}-proposed main universe multiverse restricted
 #deb http://archive.ubuntu.com/ubuntu ${DISTRIB_CODENAME}-backports main universe multiverse restricted
 EOF
+
+## fix repository to old-releases when raring
+#if [ "${DISTRIB_CODENAME}" == "raring" ]; then
+#    sed -i 's|de.archive|old-releases|g' ${DIR}/chroot/etc/apt/sources.list
+#fi
+
+## fix missing packages in trusty
+#if [ "${DISTRIB_CODENAME}" == "trusty" ]; then
+#    echo "deb http://archive.ubuntu.com/ubuntu saucy main universe multiverse restricted" >> ${DIR}/chroot/etc/apt/sources.list
+#fi
 }
  
 function create_bashrc() {
