@@ -510,6 +510,20 @@ function install_hwinfo() {
     fi
 }
 
+function install_console-tools() {
+    . /etc/os-release
+    if [ $(echo ${VERSION_ID} | tr -d ".") -gt 1204 ]; then
+        if [ $(uname -m) == "x86_64" ]; then
+            wget -nv http://mirrors.kernel.org/ubuntu/pool/universe/c/console-tools/console-tools_0.2.3dbs-65.1ubuntu2_amd64.deb -P /tmp
+        else
+            wget -nv http://mirrors.kernel.org/ubuntu/pool/universe/c/console-tools/console-tools_0.2.3dbs-65.1ubuntu2_i386.deb -P /tmp
+        fi
+        dpkg -i /tmp/console-tools_*.deb
+    else
+        apt-get install -y console-tools
+    fi
+}
+
 function mk_ts() {
 	apt-get install -y wget
 	install_hwinfo
@@ -567,7 +581,8 @@ function mk_ts() {
 #    sudo apt-get install -y initscripts mountall ifupdown
 #    sudo apt-get install -y upstart
 
-    sudo apt-get install -y console-tools
+#    install_console-tools
+
 #    sed -i 's|BLANK_TIME=30|BLANK_TIME=0|g' /etc/kbd/config
 #    sed -i 's|POWERDOWN_TIME=30|POWERDOWN_TIME=0|g' /etc/kbd/config
     sed -i 's|BLANK_TIME=30|BLANK_TIME=0|g' /etc/console-tools/config
