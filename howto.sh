@@ -279,9 +279,6 @@ apt-get install -y parted && partprobe
 # sync files from webserver
 wget -m -np -nH --cut-dirs=1 http://www.YOUR_DOMAIN.com/stsbox/ --reject="index*"#
 
-# grep list only the file name
-grep  PATTERN -o *
-
 # view disk UUID and label
 blkid /dev/sda1
 
@@ -329,9 +326,6 @@ while true; do { echo -e 'HTTP/1.1 200 OK\r\n'; cat FILE; } | nc -w 1 -l -p 80; 
 # Fix german keyboard
 setxkbmap -model pc105 -layout de -variant basic
 
-# displaying file without commentary and empty lines
-egrep -v '^(#|$)' FILE_NAME
-
 # fix "Some index files failed to download. They have been ignored, or old ones used instead."
 sudo rm -rf /var/lib/apt/lists/*
 sudo rm -vf /var/lib/apt/lists/partial/*
@@ -373,12 +367,6 @@ curl checkip.dyndns.com
 
 # file write protect
 chattr +i /etc/shadow
-
-# view config file without comments
-grep ^[^#] <FILE>
-
-# search multiple string with grep
-grep -w 'warning\|error\|critical' /var/log/messages
 
 # find softlinks
 find . -type l -exec ls -ld {} \;
