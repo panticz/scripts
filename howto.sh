@@ -405,3 +405,6 @@ stat file
 
 # extract specific file from tar archive
 tar -xvf archive.tar <path/to/file>
+
+# get installed package list from remote host
+ssh root@REMOTE dpkg -l | grep ii | cut -d " "  -f3 | sort > /tmp/remote.out
