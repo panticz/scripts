@@ -11,6 +11,9 @@ gsettings set com.canonical.indicator.datetime show-day true
 gsettings set com.canonical.indicator.sound visible true
 gsettings set org.gnome.desktop.sound event-sounds false
 
+# remove keyboard switch indicator from panel
+gsettings set com.canonical.indicator.keyboard visible false
+
 # configure workspaces
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 2
 
