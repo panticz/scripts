@@ -411,3 +411,6 @@ ssh root@REMOTE dpkg -l | grep ii | cut -d " "  -f3 | sort > /tmp/remote.out
 
 # kill all screen processes older then 1 day
 killall --older-than 1d screen
+
+# get DNS informations for a domain
+dig ANY example.com
