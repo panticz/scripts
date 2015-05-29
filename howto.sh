@@ -414,3 +414,7 @@ killall --older-than 1d screen
 
 # get DNS informations for a domain
 dig ANY example.com
+
+# escape string
+s="a string escaped by \ from ${USER}"
+echo $(printf '%q' "$s")
