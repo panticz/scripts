@@ -372,7 +372,7 @@ chattr +i /etc/shadow
 find . -type l -exec ls -ld {} \;
 
 # find broken softlinks
-find /home/ -type l -! -exec test -e {} \; -print
+find /home/ -type -type l -xtype l
 
 # set user random password (to enable login)
 echo "username:$(openssl rand -base64 32)" | chpasswd
