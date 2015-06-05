@@ -418,3 +418,6 @@ dig ANY example.com
 # escape string
 s="a string escaped by \ from ${USER}"
 echo $(printf '%q' "$s")
+
+# show ssh key length
+ssh-keygen -l -f ~/.ssh/id_rsa.pub
