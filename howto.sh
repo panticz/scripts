@@ -421,3 +421,6 @@ echo $(printf '%q' "$s")
 
 # show ssh key length
 ssh-keygen -l -f ~/.ssh/id_rsa.pub
+
+# download recursively http directory
+wget --recursive --no-parent --reject "index.html*" http://www.example.com/dir/
