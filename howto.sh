@@ -427,3 +427,7 @@ wget --recursive --no-parent --reject "index.html*" http://www.example.com/dir/
 
 # get CPU / system utilization
 cat /proc/loadavg
+
+# backup running system
+EXCLUDES="--exclude=dev/* --exclude=proc/* --exclude=sys/* --exclude=tmp/* --exclude=var/log/*"
+tar ${EXCLUDES} -cjf /tmp/$(hostname -A).$(date -I).tar.bz2 /
