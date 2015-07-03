@@ -1,5 +1,5 @@
-# remove multiple blanks
-cat in.txt | sed "s/[ ][ ]*/ /g" > out.txt
+# remove multiple blanks and tabs
+cat in.txt | sed "s/[ \t][ ]*/ /g" > out.txt
 
 # Comparing content of two files
 comm -12 <(sort FILE1.txt) <(sort FILE2.txt)
