@@ -6,6 +6,7 @@ gsettings set org.gnome.desktop.interface font-name 'Ubuntu 10'
 # configure panel clock
 gsettings set com.canonical.indicator.datetime show-date true
 gsettings set com.canonical.indicator.datetime show-day true
+gsettings set com.canonical.indicator.datetime show-week-numbers true
 
 # configure panel sound
 gsettings set com.canonical.indicator.sound visible true
