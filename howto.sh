@@ -431,3 +431,6 @@ cat /proc/loadavg
 # backup running system
 EXCLUDES="--exclude=dev/* --exclude=proc/* --exclude=sys/* --exclude=tmp/* --exclude=var/log/*"
 tar ${EXCLUDES} -cjf /tmp/$(hostname -A).$(date -I).tar.bz2 /
+
+# remove file from tar archive
+tar --delete -f archive.tar path/to/file.txt
