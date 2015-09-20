@@ -434,3 +434,5 @@ tar ${EXCLUDES} -cjf /tmp/$(hostname -A).$(date -I).tar.bz2 /
 
 # remove file from tar archive
 tar --delete -f archive.tar path/to/file.txt
+
+# restore windows MBR
