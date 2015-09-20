@@ -436,3 +436,4 @@ tar ${EXCLUDES} -cjf /tmp/$(hostname -A).$(date -I).tar.bz2 /
 tar --delete -f archive.tar path/to/file.txt
 
 # restore windows MBR
+sudo dd if=/usr/lib/syslinux/mbr.bin of=/dev/sda
