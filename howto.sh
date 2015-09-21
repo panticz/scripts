@@ -296,6 +296,9 @@ split -d -b 10M archiv.tar split-archiv.tar.
 # Remove files older then 1 day from /tmp
 find /tmp/ -mtime +1 -exec rm -r {} \;
 
+# remove apache logs older then 1 year
+find /var/log/apache2/ -type f -mtime +365 -exec rm {} \;
+
 # configure limits
 /etc/security/limits.conf
 
