@@ -59,6 +59,9 @@ dpkg-query -S FILE_NAME
 # Add script to a runlevel
 sudo update-rc.d providername start 90 2 3 5 . stop 10 0 1 4 6 .
 
+# remove script from runlevel
+update-rc.d -f avahi-daemon remove
+
 # Most used commands
 history | awk '{print $2}' | sort | uniq -c | sort -rn | head
 
