@@ -2,6 +2,9 @@
 
 OUT=/tmp/fio.out
 
+# install fio
+sudo apt-get install -y fio
+
 # clear
 [ -f ${OUT} ] && rm ${OUT}
 
