@@ -449,3 +449,6 @@ wget -q http://checkip.dyndns.com/ -O-
 
 # convert Dos to Unix line break
 tr -d '\r' < INPUT_FILE > OUTPUT_FILE
+
+# configure default user login shell to bash
+chsh -s /bin/bash ${USER}
