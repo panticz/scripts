@@ -452,3 +452,6 @@ tr -d '\r' < INPUT_FILE > OUTPUT_FILE
 
 # configure default user login shell to bash
 chsh -s /bin/bash ${USER}
+
+# generate strong password
+apg -a 1 -m 32
