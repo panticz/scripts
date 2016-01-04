@@ -455,3 +455,7 @@ chsh -s /bin/bash ${USER}
 
 # generate strong password
 apg -a 1 -m 32
+
+# forward network traffic
+iptables -t nat -A POSTROUTING -o <TARGET_NIC> -j MASQUERADE
+echo 1 > /proc/sys/net/ipv4/ip_forward
