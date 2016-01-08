@@ -462,3 +462,6 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 
 # list CPU performance by core
 mpstat -P ALL
+
+# show how long a process has been running
+ps -o etime= -p 123
