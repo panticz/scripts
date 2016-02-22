@@ -465,3 +465,8 @@ mpstat -P ALL
 
 # show how long a process has been running
 ps -o etime= -p 123
+
+# suspend from CLI
+echo -n mem | sudo tee /sys/power/state
+dbus-send --system --print-reply --dest="org.freedesktop.login1" /org/freedesktop/login1 org.freedesktop.login1.Manager.Suspend boolean:true
+method return sender=:1.0 -> dest=:1.90 reply_serial=2
