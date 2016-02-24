@@ -470,3 +470,6 @@ ps -o etime= -p 123
 echo -n mem | sudo tee /sys/power/state
 dbus-send --system --print-reply --dest="org.freedesktop.login1" /org/freedesktop/login1 org.freedesktop.login1.Manager.Suspend boolean:true
 method return sender=:1.0 -> dest=:1.90 reply_serial=2
+
+# list files / folder by size
+du -sh * | sort -h
