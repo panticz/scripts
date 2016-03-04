@@ -1,19 +1,19 @@
 # Debian Squeeze
 cat <<EOF> /etc/apt/sources.list.d/squeeze.list
-deb http://http.debian.net/debian/ squeeze main restricted universe multiverse contrib non-free
-deb-src http://http.debian.net/debian/ squeeze main restricted universe multiverse contrib non-free
+deb http://http.debian.net/debian/ squeeze main contrib non-free
+deb-src http://http.debian.net/debian/ squeeze main contrib non-free
 EOF
 
 # Debian Squeeze LTS
 cat <<EOF> /etc/apt/sources.list.d/squeeze-lts.list
-deb http://http.debian.net/debian/ squeeze-lts main restricted universe multiverse contrib non-free 
-deb-src http://http.debian.net/debian/ squeeze-lts main restricted universe multiverse contrib non-free
+deb http://http.debian.net/debian/ squeeze-lts main contrib non-free 
+deb-src http://http.debian.net/debian/ squeeze-lts main contrib non-free
 EOF
 
 # Debian Squeeze backports
 cat <<EOF> /etc/apt/sources.list.d/squeeze-backports.list
-deb http://ftp.de.debian.org/debian-backports restricted universe multiverse squeeze-backports main
-deb-src http://ftp.de.debian.org/debian-backports restricted universe multiverse squeeze-backports main
+deb http://ftp.de.debian.org/debian-backports squeeze-backports main
+deb-src http://ftp.de.debian.org/debian-backports squeeze-backports main
 EOF
 
 # Debian Wheezy
