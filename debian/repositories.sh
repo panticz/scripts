@@ -1,9 +1,3 @@
-# Debian Squeeze
-cat <<EOF> /etc/apt/sources.list.d/squeeze.list
-deb http://http.debian.net/debian/ squeeze main contrib non-free
-deb-src http://http.debian.net/debian/ squeeze main contrib non-free
-EOF
-
 # Debian Squeeze LTS
 cat <<EOF> /etc/apt/sources.list.d/squeeze-lts.list
 deb http://http.debian.net/debian/ squeeze-lts main contrib non-free 
