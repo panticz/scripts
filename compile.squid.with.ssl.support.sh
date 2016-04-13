@@ -19,14 +19,6 @@ apt-get source -y squid3
 apt-get build-dep -y squid3
  
 # enable SSL support
-#vi debian/rules
-#root@jessie:~/squid3-3.4.8# diff /tmp/rules debian/rules 
-#46c46,48
-#< 		--with-default-user=proxy
-#---
-#> 		--with-default-user=proxy \
-#> 		--enable-ssl \
-#> 		--with-open-ssl="/etc/ssl/openssl.cnf"
 wget -q http://dl.panticz.de/squid/squid3-3.4.8_enable_ssl.diff -O - | patch -p2 squid3-3.4.8/debian/rules
  
 # build packages
