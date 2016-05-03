@@ -4,6 +4,13 @@ deb http://archive.debian.org/debian/ squeeze main contrib non-free
 deb-src http://archive.debian.org/debian/ squeeze main contrib non-free
 EOF
 
+# Debian Squeeze LTS
+cat <<EOF> /etc/apt/sources.list.d/squeeze-lts.list
+deb http://archive.debian.org/debian/ squeeze-lts main contrib non-free
+deb-src http://archive.debian.org/debian/ squeeze-lts main contrib non-free
+EOF
+echo "Acquire::Check-Valid-Until false;" > /etc/apt/apt.conf.d/10squeeze-lts-no-check-valid-until
+
 # Debian Squeeze backports
 cat <<EOF> /etc/apt/sources.list.d/squeeze-backports.list
 deb http://ftp.de.debian.org/debian-backports squeeze-backports main
