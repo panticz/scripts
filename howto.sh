@@ -208,8 +208,12 @@ cat <<EOF>> $TARGET/etc/fstab
 tmpfs   /tmp   tmpfs   defaults   0   0
 EOF
 
-# set / change volume label
+# display volume label
+e2label /dev/sda1 
+
+# set volume label
 e2label /dev/sda1 newlabel
+# or
 tune2fs -L newlabel /dev/sda1
 
 # clean ubuntu trash
@@ -282,7 +286,7 @@ apt-get install -y parted && partprobe
 # sync files from webserver
 wget -m -np -nH --cut-dirs=1 http://www.YOUR_DOMAIN.com/stsbox/ --reject="index*"#
 
-# view disk UUID and label
+# view disk UUID
 blkid /dev/sda1
 
 # mount ftp
