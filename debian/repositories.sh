@@ -23,6 +23,11 @@ deb http://http.debian.net/debian/ wheezy main contrib non-free
 deb-src http://http.debian.net/debian/ wheezy main contrib non-free
 EOF
 
+cat <<EOF> /etc/apt/sources.list.d/wheezy-updates.list
+deb http://ftp.de.debian.org/debian/ wheezy-updates main contrib non-free
+deb-src http://ftp.de.debian.org/debian/ wheezy-updates main contrib non-free
+EOF
+
 # Debian Wheezy backports
 cat <<EOF> /etc/apt/sources.list.d/wheezy-backports.list
 deb http://ftp.de.debian.org/debian wheezy-backports main
