@@ -60,6 +60,7 @@ dpkg-deb -x file.deb /tmp
 dpkg-query -S FILE_NAME
 
 # Add script to a runlevel
+update-rc.d apache2 defaults
 sudo update-rc.d providername start 90 2 3 5 . stop 10 0 1 4 6 .
 
 # remove script from runlevel
