@@ -95,9 +95,6 @@ id -nG USERNAME
 usermod -G group1, group2, group3,... USERNAME
 # test gpasswd
 
-# delete user password
-passwd -d <USERNAME>
-
 # Mount SSH
 sshfs user@192.168.1.2:/media/images /mnt
 
@@ -198,14 +195,26 @@ dpkg-reconfigure tzdata
 # change password non interactive
 echo "root:terceS" | chpasswd
 
+# set user random password (to enable login)
+echo "username:$(openssl rand -base64 32)" | chpasswd
+
+# generate password
+tr -dc "[:alnum:][:punct:]" < /dev/urandom | head -c 12; echo \n
+
+# generate strong password
+apg -a 1 -m 32
+
+# MD5-Hash password
+echo terceS | mkpasswd -s -H MD5
+
+# delete user password
+passwd -d <USERNAME>
+
 # clean mbr
 dd if=/dev/zero of=/dev/sdb bs=446 count=1
 
 # create checksum
 echo "foo" | md5sum
-
-# MD5-Hash password
-echo terceS | mkpasswd -s -H MD5
 
 # create tmpfs
 cat <<EOF>> $TARGET/etc/fstab
@@ -316,9 +325,6 @@ find /var/log/apache2/ -type f -mtime +365 -exec rm {} \;
 # change MAC address
 ifconfig eth0 hw ether 00:11:22:33:44:55
 
-# generate password
-tr -dc "[:alnum:][:punct:]" < /dev/urandom | head -c 12; echo \n
-
 # set systemwide default printer
 lpadmin -d printer-name
 
@@ -387,9 +393,6 @@ find . -type l -exec ls -ld {} \;
 
 # find broken softlinks
 find /home/ -type -type l -xtype l
-
-# set user random password (to enable login)
-echo "username:$(openssl rand -base64 32)" | chpasswd
 
 # list deb package dependency
 dpkg -I <PACKAGE.deb>
@@ -460,9 +463,6 @@ tr -d '\r' < INPUT_FILE > OUTPUT_FILE
 
 # configure default user login shell to bash
 chsh -s /bin/bash ${USER}
-
-# generate strong password
-apg -a 1 -m 32
 
 # forward network traffic
 iptables -t nat -A POSTROUTING -o <TARGET_NIC> -j MASQUERADE
