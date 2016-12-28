@@ -32,6 +32,13 @@ gsettings set org.gnome.gedit.preferences.editor insert-spaces true
 gsettings set org.gnome.gedit.preferences.editor bracket-matching true
 gsettings set org.gnome.gedit.preferences.editor create-backup-copy false
 
+# configure pluma
+gsettings set org.mate.pluma editor-font "Ubuntu Mono 13"
+gsettings set org.mate.pluma display-line-numbers true
+gsettings set org.mate.pluma bracket-matching true
+gsettings set org.mate.pluma insert-spaces true
+gsettings set org.mate.pluma active-plugins "['docinfo', 'snippets', 'sort', 'filebrowser', 'changecase', 'quickopen', 'spell', 'time', 'modelines']"
+
 # autostart
 [ ! -d ~/.config/autostart ] && mkdir ~/.config/autostart && chmod 700 ~/.config/autostart
 ln -s /usr/share/applications/firefox.desktop ~/.config/autostart/
