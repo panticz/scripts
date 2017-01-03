@@ -426,6 +426,9 @@ tar -xvf archive.tar <path/to/file>
 # get installed package list from remote host
 ssh root@REMOTE dpkg -l | grep ii | cut -d " "  -f3 | sort > /tmp/remote.out
 
+# diff installed packages between hosts
+diff <(ssh host1.example.com dpkg -l | grep ii | cut -d" " -f3) <(ssh host2.example.com dpkg -l | grep ii | cut -d" " -f3)
+
 # kill all screen processes older then 1 day
 killall --older-than 1d screen
 
