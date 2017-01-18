@@ -244,6 +244,7 @@ find . -type f -exec chmod 644 {} \;
 # extract pages from PDF file
 pdftk IN.pdf cat 1-5 output OUT.pdf
 pdftk IN1.pdf IN2.pdf output OUT.pdf
+pdftk in.pdf multistamp stamp.pdf output out.pdf
 
 # merge pdf sites to a single dokument
 gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -sOutputFile=out.pdf *.pdf
