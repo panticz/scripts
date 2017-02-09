@@ -50,6 +50,11 @@ deb http://http.debian.net/debian/ jessie main contrib non-free
 deb-src http://http.debian.net/debian/ jessie main contrib non-free
 EOF
 
+cat <<EOF> /etc/apt/sources.list.d/jessie-security.list
+deb http://security.debian.org/ jessie/updates main contrib non-free
+deb-src http://security.debian.org/ jessie/updates main contrib non-free
+EOF
+
 # Debian Jessie backports
 cat <<EOF> /etc/apt/sources.list.d/jessie-backports.list
 deb ftp://ftp.de.debian.org/debian/ jessie-backports main contrib non-free
