@@ -18,4 +18,4 @@ chmod 400 /home/tunnel/.profile
 
 # restrict permissions
 chmod 500 /home/tunnel
-chown tunnel:tunnel /home/tunnel -R
+chown tunnel:nogroup /home/tunnel -R
