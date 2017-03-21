@@ -384,6 +384,8 @@ ionice -p 1170		# view priority of a process
 find /home -type f -size +50M -exec ls -lh {} \;
 
 # view my public ip
+# https://major.io/icanhazip-com-faq/
+curl icanhazip.com
 curl checkip.dyndns.com
 
 # file write protect
