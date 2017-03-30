@@ -21,6 +21,9 @@ gsettings set org.gnome.desktop.wm.preferences num-workspaces 2
 # configure session
 gsettings set org.gnome.desktop.session idle-delay 600
 
+# configure touchpad
+gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
+
 # configure nautilus
 gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
 gsettings set org.gnome.nautilus.list-view default-zoom-level 'smallest'
