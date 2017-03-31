@@ -37,6 +37,7 @@ gsettings set org.gnome.gedit.preferences.editor create-backup-copy false
 
 # configure pluma
 gsettings set org.mate.pluma editor-font "Ubuntu Mono 13"
+gsettings set org.mate.pluma use-default-font false
 gsettings set org.mate.pluma display-line-numbers true
 gsettings set org.mate.pluma bracket-matching true
 gsettings set org.mate.pluma insert-spaces true
