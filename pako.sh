@@ -49,6 +49,7 @@ gsettings set org.mate.pluma active-plugins "['docinfo', 'snippets', 'sort', 'fi
 ln -s /usr/share/applications/firefox.desktop ~/.config/autostart/
 ln -s /usr/share/applications/chromium-browser.desktop ~/.config/autostart/
 ln -s /usr/share/applications/thunderbird.desktop ~/.config/autostart/
+ln -s /usr/share/applications/hamster-indicator.desktop  ~/.config/autostart/
 
 # dont forward locale to server
 sudo sed -i 's|    SendEnv LANG LC_*|#   SendEnv LANG LC_*|g' /etc/ssh/ssh_config
