@@ -46,7 +46,6 @@ gsettings set org.mate.pluma active-plugins "['docinfo', 'snippets', 'sort', 'fi
 
 # autostart
 [ ! -d ~/.config/autostart ] && mkdir ~/.config/autostart && chmod 700 ~/.config/autostart
-ln -s /usr/share/applications/firefox.desktop ~/.config/autostart/
 ln -s /usr/share/applications/chromium-browser.desktop ~/.config/autostart/
 ln -s /usr/share/applications/thunderbird.desktop ~/.config/autostart/
 ln -s /usr/share/applications/hamster-indicator.desktop  ~/.config/autostart/
