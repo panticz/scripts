@@ -28,6 +28,10 @@ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false
 gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
 gsettings set org.gnome.nautilus.list-view default-zoom-level 'smallest'
 
+# configure caja
+gsettings set org.mate.caja.preferences default-folder-viewer 'list-view'
+gsettings set org.mate.caja.list-view default-zoom-level 'smallest'
+
 # configure gedit
 gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
 gsettings set org.gnome.gedit.preferences.editor tabs-size 4
