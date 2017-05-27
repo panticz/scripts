@@ -224,7 +224,7 @@ EOF
 # display volume label
 e2label /dev/sda1 
 
-# set volume label
+# change volume label
 e2label /dev/sda1 newlabel
 # or
 tune2fs -L newlabel /dev/sda1
