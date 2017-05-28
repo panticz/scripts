@@ -7,12 +7,6 @@ deb http://archive.debian.org/debian/ squeeze main contrib non-free
 deb-src http://archive.debian.org/debian/ squeeze main contrib non-free
 EOF
 
-# Squeeze security
-cat <<EOF> /etc/apt/sources.list.d/squeeze-security.list
-deb http://security.debian.org/ squeeze/updates main contrib non-free
-deb-src http://security.debian.org/ squeeze/updates main contrib non-free
-EOF
-
 # Squeeze LTS
 cat <<EOF> /etc/apt/sources.list.d/squeeze-lts.list
 deb http://archive.debian.org/debian/ squeeze-lts main contrib non-free
