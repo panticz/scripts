@@ -10,9 +10,9 @@ if [ "${ID}" == "debian" ]; then
   sed -i 's|//      "o=Debian,a=stable-updates";|        "o=Debian,a=stable-updates";|g' /etc/apt/apt.conf.d/50unattended-upgrades
 fi
 
-# enable update on ubuntu
+# enable autoupdate for Ubuntu updates repository
 if [ "${ID}" == "ubuntu" ]; then
-  sed -i '4s|//| |g' /etc/apt/apt.conf.d/50unattended-upgrades
+  sed -i 's|//      "${distro_id}:${distro_codename}-updates";|        "${distro_id}:${distro_codename}-updates"; |g' /etc/apt/apt.conf.d/50unattended-upgrades
 fi
 
 # reconfigure
