@@ -59,3 +59,6 @@ sudo sed -i 's|    SendEnv LANG LC_*|#   SendEnv LANG LC_*|g' /etc/ssh/ssh_confi
 
 # set pluma as default text editor
 sudo sed -i 's|text/plain=gedit.desktop|text/plain=pluma.desktop|g' /etc/gnome/defaults.list
+
+# set caja as default file browser (for user)
+xdg-mime default caja.desktop inode/directory application/x-gnome-saved-search
