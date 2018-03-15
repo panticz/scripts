@@ -63,7 +63,7 @@ dpkg-query -S FILE_NAME
 update-rc.d apache2 defaults
 sudo update-rc.d providername start 90 2 3 5 . stop 10 0 1 4 6 .
 
-# remove script from runlevel
+# disable sysv service / remove script from runlevel
 update-rc.d -f avahi-daemon remove
 
 # Most used commands
