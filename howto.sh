@@ -355,9 +355,13 @@ scanimage --format tiff --mode color -l 0 -t 0 -x 105 -y 74 --resolution 150  | 
 sudo apt-get install -y binutils
 strings /usr/bin/passwd
 
-# tar multicore / parallel compression
-sudo apt-get install pbzip2
+# tar multicore / parallel compression (bzip)
+sudo apt-get install -y pbzip2
 tar -I pbzip2 -cf OUT.tar.bz2 /mnt/
+
+# parallel compression (gzip)
+sudo apt-get install -y pigz
+tar -I pigz -cf OUT.tar.gz /mnt/
 
 # user specific crontab
 # list
