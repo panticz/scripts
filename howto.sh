@@ -330,7 +330,10 @@ lpadmin -d printer-name
 lpoptions -d printer-name
 
 # Find the speed of your Ethernet card in Linux
-ethtool eth0
+sudo mii-tool eth0
+cat /sys/class/net/eth0/speed
+cat /sys/class/net/eth0/speed
+sudo ethtool eth0
 
 # Backup package list and install on another system (not tested yet)
 dpkg --get-selections | grep -v deinstall > DPKG_LIST.txt
